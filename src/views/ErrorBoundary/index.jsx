@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 class ErrorBoundary extends Component {
   constructor(props) {
@@ -6,18 +6,18 @@ class ErrorBoundary extends Component {
     this.state = { hasError: false };
   }
 
-  static getDerivedStateFromError(error) {
+  static getDerivedStateFromError() {
     return { hasError: true };
   }
 
   componentDidCatch() {
-    this.setState({ appError: true });
+    this.setState({ hasError: true });
   }
 
   render() {
-    const { appError } = this.state;
+    const { hasError } = this.state;
     const { children } = this.props;
-    return appError ? <h2>We apologize, something went wrong</h2> : children;
+    return hasError ? <h2>We apologize, something went wrong</h2> : children;
   }
 }
 
