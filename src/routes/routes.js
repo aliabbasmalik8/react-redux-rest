@@ -1,13 +1,13 @@
-import { lazy } from "react";
+import { lazy } from 'react';
 
-const Login = lazy(() => import("views/Auth/Login"));
+const Login = lazy(() => import('views/Auth/Login'));
 
 const appRoutes = [
   {
-    path: "/login",
+    path: '/login',
     component: Login,
-    exact: true
-  }
+    exact: true,
+  },
 ];
 
 export default appRoutes;

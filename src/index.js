@@ -1,14 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux'
+import { Provider } from 'react-redux';
 import { createBrowserHistory } from 'history';
 import { Router, Route, Switch } from 'react-router-dom';
 import indexRoutes from 'routes';
 import * as serviceWorker from 'serviceWorker';
-import configureStore from 'configureStore'
+import configureStore from 'configureStore';
 
 const history = createBrowserHistory();
-const store = configureStore()
+const store = configureStore();
 
 ReactDOM.render(
   <Provider store={store}>
@@ -20,7 +20,7 @@ ReactDOM.render(
       </Switch>
     </Router>
   </Provider>,
-  document.getElementById('root')
+  document.getElementById('root'),
 );
 
 serviceWorker.register();
