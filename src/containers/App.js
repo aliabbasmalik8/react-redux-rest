@@ -1,9 +1,8 @@
 import React, { Suspense } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import appRoutes from 'routes/routes';
-import ErrorBoundary from 'views/ErrorBoundary';
-import Header from 'views/Header/index';
-import Footer from 'views/Footer/index';
+import ErrorBoundary from 'components/ErrorBoundary';
+import Header from 'components/Header/index';
 
 function App() {
   const swithRoutes = (
@@ -32,7 +31,6 @@ function App() {
     <>
       <Header />
       <ErrorBoundary>{swithRoutes}</ErrorBoundary>
-      <Footer />
     </>
   );
 }

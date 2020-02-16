@@ -1,0 +1,8 @@
+@import 'constant/color.scss';
+
+body {
+  background: $BODY_BACKGROUNG_COLOR;
+  margin: 0 !important;
+  color: $BODY_COLOR;
+  font-family: 'Open Sans';
+}

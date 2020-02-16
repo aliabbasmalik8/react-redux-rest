@@ -65,11 +65,10 @@
   },
   "overrides": [
     {
-      "files": [
-        "src/actions/*.js"
-      ],
+      "files": "*.js",
       "rules": {
-        "import/prefer-default-export": 0
+        "import/prefer-default-export": 0,
+        "no-use-before-define": 0
       }
     }
   ],

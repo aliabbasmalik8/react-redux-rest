@@ -6,6 +6,7 @@ import { Router, Route, Switch } from 'react-router-dom';
 import indexRoutes from 'routes';
 import * as serviceWorker from 'serviceWorker';
 import configureStore from 'configureStore';
+import './styles.scss';
 
 const history = createBrowserHistory();
 const store = configureStore();
