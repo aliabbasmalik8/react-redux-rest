@@ -4,19 +4,19 @@ import validate from 'validates/validateForm';
 function useFormValidation(initialValues, submitForm) {
   const [values, setValues] = useState(initialValues);
   const [errors, setErrors] = useState({});
-  const [isSubmitting, setSubmitting] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
     if (isSubmitting) {
       const noError = Object.keys(errors).length === 0;
       if (noError) {
         submitForm();
-        setSubmitting(false);
+        setIsSubmitting(false);
       } else {
-        setSubmitting(false);
+        setIsSubmitting(false);
       }
     }
-  }, [errors]);
+  }, [isSubmitting, errors, submitForm]);
 
   function handleChange(event) {
     setValues({
@@ -35,7 +35,7 @@ function useFormValidation(initialValues, submitForm) {
 
   function handleSubmit(event) {
     event.preventDefault();
-    setSubmitting(true);
+    setIsSubmitting(true);
     const validateErrors = validate(values, errors, initialValues);
     setErrors(validateErrors);
   }

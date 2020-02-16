@@ -19,7 +19,7 @@ export default function SignUp() {
   } = useFormValidation(INITAIL_STATE, authenticateUser);
 
   function authenticateUser() {
-    // console.log('hello world');
+    console.log('hello world');
   }
 
   return (

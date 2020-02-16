@@ -1,11 +1,22 @@
 export default function validateAuth(values, initialErrors, inputFields) {
-  const errors = JSON.parse(JSON.stringify(initialErrors));
+  const errors = { ...initialErrors };
+  let error = null;
   if (inputFields.email || inputFields.email === '') {
-    errors.email = validateEmail(values);
+    error = validateEmail(values);
+    if (error) {
+      errors.email = error;
+    } else {
+      delete errors.email;
+    }
   }
 
   if (inputFields.password || inputFields.password === '') {
-    errors.password = validatetPassword(values);
+    error = validatetPassword(values);
+    if (error) {
+      errors.password = error;
+    } else {
+      delete errors.password;
+    }
   }
 
   return errors;
