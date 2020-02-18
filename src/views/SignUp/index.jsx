@@ -1,5 +1,6 @@
 /* eslint-disable no-use-before-define */
 import React from 'react';
+import { Link } from 'react-router-dom';
 import useFormValidation from 'hooks/Form/useFormValidation';
 import './styles.scss';
 
@@ -23,37 +24,50 @@ export default function SignUp() {
   }
 
   return (
-    <form className='signup_banner' onSubmit={handleSubmit}>
-      <div className='input_banner'>
-        <input
-          name='email'
-          value={values.email}
-          onBlur={handleBlur}
-          onChange={handleChange}
-          className={errors.email && 'error-input'}
-          autoComplete='off'
-          placeholder='Enter Email'
-        />
+    <div className='signup_banner'>
+      <div className='main_subtitle'>
+        Make the most of your professional life
       </div>
-      {errors.email && <p className='error-text'>{errors.email}</p>}
-      <div className='input_banner'>
-        <input
-          name='password'
-          value={values.password}
-          onBlur={handleBlur}
-          onChange={handleChange}
-          className={errors.password && 'error-input'}
-          autoComplete='off'
-          placeholder='Enter Password'
-        />
-      </div>
-      {errors.password && <p className='error-text'>{errors.password}</p>}
+      <form autoComplete='off' className='signup_form' onSubmit={handleSubmit}>
+        <div className='input_banner'>
+          <label htmlFor='email'>Email</label>
+          <input
+            name='email'
+            type='email'
+            value={values.email}
+            onBlur={handleBlur}
+            onChange={handleChange}
+            className={errors.email && 'error-input'}
+            autoComplete='none'
+          />
+          {errors.email && <p className='error-text'>{errors.email}</p>}
+        </div>
+        <div className='input_banner'>
+          <label htmlFor='password'>Password (6 or more characters)</label>
+          <input
+            name='password'
+            type='password'
+            value={values.password}
+            onBlur={handleBlur}
+            onChange={handleChange}
+            className={errors.password && 'error-input'}
+            autoComplete='off'
+          />
+          {errors.password && <p className='error-text'>{errors.password}</p>}
+        </div>
 
-      <div className='btn_banner'>
-        <button disabled={isSubmitting} type='submit'>
-          Sign Up
-        </button>
-      </div>
-    </form>
+        <div className='btn_banner'>
+          <button disabled={isSubmitting} type='submit'>
+            Join
+          </button>
+        </div>
+        <p className='have_account'>
+          Already on LinkedIn?{' '}
+          <Link to='/login' className='sign_in_link'>
+            Sign in
+          </Link>
+        </p>
+      </form>
+    </div>
   );
 }

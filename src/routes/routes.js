@@ -5,12 +5,12 @@ const SignUp = lazy(() => import('views/SignUp'));
 
 const appRoutes = [
   {
-    path: '/login',
+    path: '/login1',
     component: Login,
     exact: true,
   },
   {
-    path: '/signup',
+    path: '/signup1',
     component: SignUp,
     exact: true,
   },

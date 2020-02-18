@@ -25,7 +25,7 @@ export default function validateAuth(values, initialErrors, inputFields) {
 function validateEmail(values) {
   let error = null;
   if (!values.email) {
-    error = 'Required';
+    error = 'Please enter your email address.';
   } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
     error = 'Invalid email address';
   }
@@ -35,7 +35,7 @@ function validateEmail(values) {
 function validatetPassword(values) {
   let error = null;
   if (!values.password) {
-    error = 'Required';
+    error = 'Please enter your password.';
   } else if (values.password.length < 6) {
     error = 'Password must be at least 6 characters';
   }

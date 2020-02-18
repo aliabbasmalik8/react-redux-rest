@@ -2,7 +2,10 @@
 
 body {
   background: $BODY_BACKGROUNG_COLOR;
+  background: linear-gradient(45deg, #0181c5, #0c8996);
+  background-attachment: fixed;
   margin: 0 !important;
   color: $BODY_COLOR;
   font-family: 'Open Sans';
+  font-size: 16px;
 }
