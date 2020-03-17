@@ -9,7 +9,7 @@ const INITAIL_STATE = {
   password: '',
 };
 
-function SignUp() {
+function SignIn() {
   const {
     values,
     handleBlur,
@@ -24,7 +24,7 @@ function SignUp() {
   }
 
   return (
-    <div className='signup_banner'>
+    <div className='signin_banner'>
       <div className='main_subtitle'>
         Make the most of your professional life
       </div>
@@ -62,9 +62,9 @@ function SignUp() {
           </button>
         </div>
         <p className='have_account'>
-          Already on LinkedIn?{' '}
-          <Link to='/accounts/signin' className='sign_in_link'>
-            Sign in
+          Don&apos;t have an account?{' '}
+          <Link to='/accounts/signup' className='sign_in_link'>
+            Sign up
           </Link>
         </p>
       </form>
@@ -72,4 +72,4 @@ function SignUp() {
   );
 }
 
-export default SignUp;
+export default SignIn;
