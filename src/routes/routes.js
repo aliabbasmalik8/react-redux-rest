@@ -8,6 +8,7 @@ const appRoutes = [
   {
     path: '/',
     component: Home,
+    isPrivate: true,
     exact: true,
   },
   {

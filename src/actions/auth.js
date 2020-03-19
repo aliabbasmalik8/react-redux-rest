@@ -19,9 +19,12 @@ export const signupFailure = payload => {
 };
 
 export const signinSuccess = payload => {
-  return {
-    type: types.SIGNIN_SUCCESS,
-    payload,
+  return dispatch => {
+    dispatch(push('/'));
+    dispatch({
+      type: types.SIGNIN_SUCCESS,
+      payload,
+    });
   };
 };
 

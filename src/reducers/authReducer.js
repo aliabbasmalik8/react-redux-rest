@@ -18,6 +18,21 @@ export default function auth(state = initialState.auth, action) {
         isLoggedIn: false,
         error: action.payload,
       };
+    case types.SIGNIN_SUCCESS:
+      localStorage.setItem('taskerToken', action.payload.token);
+      return {
+        ...state,
+        user: action.payload.user,
+        isLoggedIn: true,
+        error: null,
+      };
+    case types.SIGNIN_FAILURE:
+      return {
+        ...state,
+        user: {},
+        isLoggedIn: false,
+        error: action.payload,
+      };
     case types.AUTHENTICATE_USER:
       return {
         ...state,
@@ -35,3 +50,5 @@ export default function auth(state = initialState.auth, action) {
       return state;
   }
 }
+
+export const isLoggedIn = state => state.auth.isLoggedIn;
