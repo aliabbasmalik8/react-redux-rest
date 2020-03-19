@@ -58,7 +58,7 @@ function SignIn() {
 
         <div className='btn_banner'>
           <button disabled={isSubmitting} type='submit'>
-            Join
+            Login
           </button>
         </div>
         <p className='have_account'>

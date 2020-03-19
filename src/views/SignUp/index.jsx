@@ -1,6 +1,9 @@
 /* eslint-disable no-use-before-define */
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { signup } from 'api/auth';
+import { signupSuccess, signupFailure } from 'actions/auth';
 import useFormValidation from 'hooks/Form/useFormValidation';
 import './styles.scss';
 
@@ -18,9 +21,10 @@ function SignUp() {
     errors,
     isSubmitting,
   } = useFormValidation(INITAIL_STATE, authenticateUser);
+  const dispatch = useDispatch();
 
   function authenticateUser() {
-    console.log('hello world');
+    dispatch(signup(values, signupSuccess, signupFailure));
   }
 
   return (
