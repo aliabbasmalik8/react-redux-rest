@@ -31,3 +31,18 @@ export const signin = (data, successAction, failureAction) => {
     );
   };
 };
+
+export const user = (successAction, failureAction) => {
+  return dispatch => {
+    dispatch(
+      request({
+        path: 'user',
+        successAction,
+        failureAction,
+        opts: {
+          method: 'GET',
+        },
+      }),
+    );
+  };
+};

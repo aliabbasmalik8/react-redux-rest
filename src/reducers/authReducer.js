@@ -7,14 +7,29 @@ export default function auth(state = initialState.auth, action) {
       localStorage.setItem('taskerToken', action.payload.token);
       return {
         ...state,
+        user: action.payload.user,
         isLoggedIn: true,
         error: null,
       };
     case types.SIGNUP_FAILURE:
       return {
         ...state,
+        user: {},
         isLoggedIn: false,
         error: action.payload,
+      };
+    case types.AUTHENTICATE_USER:
+      return {
+        ...state,
+        user: action.payload.user,
+        isLoggedIn: true,
+        error: null,
+      };
+    case types.UN_AUTHENTICATE_USER:
+      return {
+        ...state,
+        user: {},
+        isLoggedIn: false,
       };
     default:
       return state;

@@ -7,7 +7,7 @@ const request = ({ path, successAction, failureAction, opts = {} }) => {
       url: `${BASE_URL}/${path}`,
       ...opts,
       headers: {
-        Authorization: localStorage?.taskerToken ?? null,
+        authorization: localStorage.getItem('taskerToken'),
         'Content-Type': 'application/json',
       },
     })

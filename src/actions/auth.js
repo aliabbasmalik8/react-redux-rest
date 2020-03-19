@@ -31,3 +31,17 @@ export const signinFailure = payload => {
     payload,
   };
 };
+
+export const authenticateUser = payload => {
+  return {
+    type: types.AUTHENTICATE_USER,
+    payload,
+  };
+};
+
+export const unAuthenticateUser = payload => {
+  return {
+    type: types.UN_AUTHENTICATE_USER,
+    payload,
+  };
+};
