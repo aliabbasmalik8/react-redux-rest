@@ -4,6 +4,7 @@ const initialState = {
     isLoggedIn: false,
     error: null,
   },
+  users: [],
 };
 
 export default initialState;

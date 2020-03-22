@@ -1,0 +1,42 @@
+.home {
+  margin: 30px auto;
+  max-width: 700px;
+  .tabs {
+    display: flex;
+    justify-content: center;
+    .tab {
+      border: 1px solid #dbdbdb;
+      padding: 10px;
+      cursor: pointer;
+      background-color: #fff;
+      &.active {
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+.create-task {
+  padding: 20px;
+  border: 1px solid #dbdbdb;
+  background: #fff;
+  margin: 20px;
+  .field-banner {
+    display: flex;
+    margin: 5px 0;
+    .label {
+      width: 20%;
+    }
+    input {
+      margin: 2px 0;
+      padding: 2px;
+    }
+    .items-banner {
+      display: flex;
+      flex-direction: column;
+    }
+    .add-item {
+      margin: 10px auto 0;
+    }
+  }
+}
