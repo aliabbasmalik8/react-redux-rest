@@ -1,32 +1,13 @@
-import React, { useState } from 'react';
-import CreateTask from './createTask';
+import React from 'react';
 import './styles.scss';
 
 function Home() {
-  const [activeTab, setActiveTab] = useState('createtask');
   return (
     <div className='home'>
-      <div className='tabs'>
-        <div
-          className={`tab ${activeTab === 'createtask' ? 'active' : ''}`}
-          onClick={() => setActiveTab('createtask')}
-        >
-          Create Task
-        </div>
-        <div
-          className={`tab ${activeTab === 'myTask' ? 'active' : ''}`}
-          onClick={() => setActiveTab('myTask')}
-        >
-          My Task
-        </div>
-        <div
-          className={`tab ${activeTab === 'assignedTask' ? 'active' : ''}`}
-          onClick={() => setActiveTab('assignedTask')}
-        >
-          Assigned Task
-        </div>
-      </div>
-      {activeTab === 'createtask' && <CreateTask />}
+      It is Home, I am open to the recommendations. You can also mail me if you
+      need any help. <br />
+      name: Ali <br />
+      email: aliabbasmalik8@gmail.com
     </div>
   );
 }

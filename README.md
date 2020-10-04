@@ -1,5 +1,34 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Folder Information
+
+```
+view: for new page
+components: for generic component
+routes:
+    routes/index: used for add container to some specific routes
+    routes/routes: used for declare new routes. You can declare like this way.
+        {
+            path: '/',
+            component: Home,
+            isPrivate: true,
+            exact: true
+        },
+api: used for api call
+    api/request: is common point of call. you can place commom configuration here.
+action: used for place redux action.
+reducer: used for place redux reducer.
+middleware: used for add some middleware.
+constant: used for place constant.
+config: used for place some common configuration.
+validates: used for place validation.
+hooks: used for place custome hooks.
+```
+
+## Importany Note
+
+add .env file in root dir and set `REACT_APP_BASE_API_URL` for your backend server
+
 ## Available Scripts
 
 In the project directory, you can run:
